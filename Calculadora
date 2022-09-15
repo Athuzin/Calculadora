@@ -1,0 +1,188 @@
+from tkinter import *
+
+janela = Tk()
+janela.title('Calculadora')
+janela.configure(bg='#bbbdbb')
+
+
+class Calculadora:
+
+    def __init__(self):
+
+        self.n1 = 0
+        self.n2 = 0
+        self.sinal = '+'
+
+        self.espaço = Label(janela, text='', font=(
+            'Arial 30 bold'), width=0, height=3, bg='#bbbdbb')
+        self.espaço.grid(row=0, column=3)
+
+        self.tela = Label(janela, text='0', font=(
+            'Arial 30 bold'), width=0, height=0, bg='#bbbdbb')
+        self.tela.place(x=60, y=50)
+
+        self.criar_número1 = Button(
+            janela, text='1', font=('Arial 15 bold'), width=10, height=5, relief='flat', command=self.número1)
+        self.criar_número1.grid(row=1, column=0)
+
+        self.criar_número2 = Button(
+            janela, text='2', font=('Arial 15 bold'), width=10, height=5, relief='flat', command=self.número2)
+        self.criar_número2.grid(row=1, column=1)
+
+        self.criar_número3 = Button(
+            janela, text='3', font=('Arial 15 bold'), width=10, height=5, relief='flat', command=self.número3)
+        self.criar_número3.grid(row=1, column=2)
+
+        self.criar_número4 = Button(
+            janela, text='4', font=('Arial 15 bold'), width=10, height=5, relief='flat', command=self.número4)
+        self.criar_número4.grid(row=2, column=0)
+
+        self.criar_número5 = Button(
+            janela, text='5', font=('Arial 15 bold'), width=10, height=5, relief='flat', command=self.número5)
+        self.criar_número5.grid(row=2, column=1)
+
+        self.criar_número6 = Button(
+            janela, text='6', font=('Arial 15 bold'), width=10, height=5, relief='flat', command=self.número6)
+        self.criar_número6.grid(row=2, column=2)
+
+        self.criar_número7 = Button(
+            janela, text='7', font=('Arial 15 bold'), width=10, height=5, relief='flat', command=self.número7)
+        self.criar_número7.grid(row=3, column=0)
+
+        self.criar_número8 = Button(
+            janela, text='8', font=('Arial 15 bold'), width=10, height=5, relief='flat', command=self.número8)
+        self.criar_número8.grid(row=3, column=1)
+
+        self.criar_número9 = Button(
+            janela, text='9', font=('Arial 15 bold'), width=10, height=5, relief='flat', command=self.número9)
+        self.criar_número9.grid(row=3, column=2)
+
+        self.criar_número0 = Button(janela, text='0', font=(
+            'Arial 15 bold'), width=10, height=5, relief='flat', command=self.número0)
+        self.criar_número0.grid(row=4, column=1)
+
+        self.botão_mais = Button(
+            janela, text='+', font=('Arial 15 bold'), width=10, height=5, relief='flat', fg='white', bg='orange', command=self.adicionar)
+        self.botão_mais.grid(row=1, column=3)
+
+        self.botão_menos = Button(
+            janela, text='-', font=('Arial 15 bold'), width=10, height=5, relief='flat', fg='white', bg='orange', command=self.subtrair)
+        self.botão_menos.grid(row=2, column=3)
+
+        self.botão_menos = Button(
+            janela, text='x', font=('Arial 15 bold'), width=10, height=5, relief='flat', fg='white', bg='orange', command=self.multiplicar)
+        self.botão_menos.grid(row=3, column=3)
+
+        self.botão_menos = Button(
+            janela, text='/', font=('Arial 15 bold'), width=10, height=5, relief='flat', fg='white', bg='orange', command=self.dividir)
+        self.botão_menos.grid(row=4, column=3)
+
+        self.botão_menos = Button(
+            janela, text='=', font=('Arial 15 bold'), width=10, height=5, relief='flat', fg='white', bg='blue', command=self.resultar)
+        self.botão_menos.grid(row=4, column=2)
+
+        self.botão_menos = Button(
+            janela, text='C', font=('Arial 15 bold'), width=10, height=5, relief='flat', fg='white', bg='purple', command=self.apagar)
+        self.botão_menos.grid(row=4, column=0)
+
+    def número1(self):
+        if not self.tela['text'] == '0':
+            self.tela['text'] = str(self.tela['text']) + '1'
+        else:
+            self.tela['text'] = '1'
+
+    def número2(self):
+        if not self.tela['text'] == '0':
+            self.tela['text'] = str(self.tela['text']) + '2'
+        else:
+            self.tela['text'] = '2'
+
+    def número3(self):
+        if not self.tela['text'] == '0':
+            self.tela['text'] = str(self.tela['text']) + '3'
+        else:
+            self.tela['text'] = '3'
+
+    def número4(self):
+        if not self.tela['text'] == '0':
+            self.tela['text'] = str(self.tela['text']) + '4'
+        else:
+            self.tela['text'] = '4'
+
+    def número5(self):
+        if not self.tela['text'] == '0':
+            self.tela['text'] = str(self.tela['text']) + '5'
+        else:
+            self.tela['text'] = '5'
+
+    def número6(self):
+        if not self.tela['text'] == '0':
+            self.tela['text'] = str(self.tela['text']) + '6'
+        else:
+            self.tela['text'] = '6'
+
+    def número7(self):
+        if not self.tela['text'] == '0':
+            self.tela['text'] = str(self.tela['text']) + '7'
+        else:
+            self.tela['text'] = '7'
+
+    def número8(self):
+        if not self.tela['text'] == '0':
+            self.tela['text'] = str(self.tela['text']) + '8'
+        else:
+            self.tela['text'] = '8'
+
+    def número9(self):
+        if not self.tela['text'] == '0':
+            self.tela['text'] = str(self.tela['text']) + '9'
+        else:
+            self.tela['text'] = '9'
+
+    def número0(self):
+        if not self.tela['text'] == '0':
+            self.tela['text'] = str(self.tela['text']) + '0'
+
+    def adicionar(self):
+        self.n1 = int(self.tela['text'])
+        self.sinal = '+'
+        self.tela['text'] = '0'
+
+    def subtrair(self):
+        self.n1 = int(self.tela['text'])
+        self.sinal = '-'
+        self.tela['text'] = '0'
+
+    def multiplicar(self):
+        self.n1 = int(self.tela['text'])
+        self.sinal = '*'
+        self.tela['text'] = '0'
+
+    def dividir(self):
+        self.n1 = int(self.tela['text'])
+        self.sinal = '/'
+        self.tela['text'] = '0'
+
+    def resultar(self):
+
+        self.n2 = int(self.tela['text'])
+
+        if self.sinal == '+':
+            self.tela['text'] = self.n1 + self.n2
+        elif self.sinal == '-':
+            self.tela['text'] = self.n1 - self.n2
+        elif self.sinal == '*':
+            self.tela['text'] = self.n1 * self.n2
+        elif self.sinal == '/':
+            self.tela['text'] = self.n1 / self.n2
+
+    def apagar(self):
+
+        self.tela['text'] = '0'
+        self.n1 = 0
+        self.n2 = 0
+        self.sinal = '+'
+
+Calculadora()
+
+janela.mainloop()
